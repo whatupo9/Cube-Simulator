@@ -12,7 +12,7 @@ void RotationManager::addRotation(Point* point, const Point& centre, int axis, d
 	{
 		if (_rotations[i][0].getPoint() == point)
 		{
-			it->emplace_back(point, centre, axis, degrees, clockwise, duration, _rotations[i][0]);
+			it->emplace_back(point, centre, axis, degrees, clockwise, duration, &_rotations[i][0]);
 			_rotations[i][it->size() - 1].setStartingPoint(_rotations[i][it->size() - 2].getTarget());
 			for (auto it2 = _rotations[i].begin(); it2 < _rotations[i].end(); it2++)
 			{
@@ -53,4 +53,9 @@ void RotationManager::update(double elapsed)
 bool RotationManager::isRotating() const
 {
 	return !_rotations.empty();
+}
+
+double RotationManager::timeRemaining(int queueIndex, int rotation)
+{
+	return 0.0;
 }
