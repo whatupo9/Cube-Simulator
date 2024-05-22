@@ -1,0 +1,610 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Game Engine">
+      <UniqueIdentifier>{9e208237-9cbf-4b4a-bc64-820e7dafef2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\SOIL">
+      <UniqueIdentifier>{4b5cf04d-1436-4e1a-8035-5a42f4d55929}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\OpenGL">
+      <UniqueIdentifier>{cdd3f8d0-2d6f-48a4-8846-195521be9fc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\FMOD">
+      <UniqueIdentifier>{8468973b-6cfd-49c8-b348-fc76ab1e1eb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\ICS">
+      <UniqueIdentifier>{6f735f7c-4ecb-4614-92c3-e40ce9b85903}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\FreeType">
+      <UniqueIdentifier>{410f4350-3a1a-4e3d-a8bf-6f15b50c737f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SOIL\image_DXT.c">
+      <Filter>Game Engine\SOIL</Filter>
+    </ClCompile>
+    <ClCompile Include="SOIL\image_helper.c">
+      <Filter>Game Engine\SOIL</Filter>
+    </ClCompile>
+    <ClCompile Include="SOIL\SOIL.c">
+      <Filter>Game Engine\SOIL</Filter>
+    </ClCompile>
+    <ClCompile Include="SOIL\stb_image_aug.c">
+      <Filter>Game Engine\SOIL</Filter>
+    </ClCompile>
+    <ClCompile Include="ICS\ICS_AnimatedSprite.cpp">
+      <Filter>Game Engine\ICS</Filter>
+    </ClCompile>
+    <ClCompile Include="ICS\ICS_Animation.cpp">
+      <Filter>Game Engine\ICS</Filter>
+    </ClCompile>
+    <ClCompile Include="ICS\ICS_Button.cpp">
+      <Filter>Game Engine\ICS</Filter>
+    </ClCompile>
+    <ClCompile Include="ICS\ICS_Client.cpp">
+      <Filter>Game Engine\ICS</Filter>
+    </ClCompile>
+    <ClCompile Include="ICS\ICS_Color.cpp">
+      <Filter>Game Engine\ICS</Filter>
+    </ClCompile>
+    <ClCompile Include="ICS\ICS_ConsoleHelper.cpp">
+      <Filter>Game Engine\ICS</Filter>
+    </ClCompile>
+    <ClCompile Include="ICS\ICS_DropdownMenu.cpp">
+      <Filter>Game Engine\ICS</Filter>
+    </ClCompile>
+    <ClCompile Include="ICS\ICS_Font.cpp">
+      <Filter>Game Engine\ICS</Filter>
+    </ClCompile>
+    <ClCompile Include="ICS\ICS_Game.cpp">
+      <Filter>Game Engine\ICS</Filter>
+    </ClCompile>
+    <ClCompile Include="ICS\ICS_Helpers.cpp">
+      <Filter>Game Engine\ICS</Filter>
+    </ClCompile>
+    <ClCompile Include="ICS\ICS_Renderable.cpp">
+      <Filter>Game Engine\ICS</Filter>
+    </ClCompile>
+    <ClCompile Include="ICS\ICS_Resource.cpp">
+      <Filter>Game Engine\ICS</Filter>
+    </ClCompile>
+    <ClCompile Include="ICS\ICS_Server.cpp">
+      <Filter>Game Engine\ICS</Filter>
+    </ClCompile>
+    <ClCompile Include="ICS\ICS_Slider.cpp">
+      <Filter>Game Engine\ICS</Filter>
+    </ClCompile>
+    <ClCompile Include="ICS\ICS_Sound.cpp">
+      <Filter>Game Engine\ICS</Filter>
+    </ClCompile>
+    <ClCompile Include="ICS\ICS_Sprite.cpp">
+      <Filter>Game Engine\ICS</Filter>
+    </ClCompile>
+    <ClCompile Include="ICS\ICS_Text.cpp">
+      <Filter>Game Engine\ICS</Filter>
+    </ClCompile>
+    <ClCompile Include="ICS\ICS_TextBox.cpp">
+      <Filter>Game Engine\ICS</Filter>
+    </ClCompile>
+    <ClCompile Include="ICS\ICS_TextField.cpp">
+      <Filter>Game Engine\ICS</Filter>
+    </ClCompile>
+    <ClCompile Include="ICS\ICS_TextPrompt.cpp">
+      <Filter>Game Engine\ICS</Filter>
+    </ClCompile>
+    <ClCompile Include="ICS\ICS_TextRenderable.cpp">
+      <Filter>Game Engine\ICS</Filter>
+    </ClCompile>
+    <ClCompile Include="ICS\ICS_Texture.cpp">
+      <Filter>Game Engine\ICS</Filter>
+    </ClCompile>
+    <ClCompile Include="ICS\ICS_TileSet.cpp">
+      <Filter>Game Engine\ICS</Filter>
+    </ClCompile>
+    <ClCompile Include="ICS\ICS_Window.cpp">
+      <Filter>Game Engine\ICS</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\Colour.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\Cube Constants.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\Cube.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\Math.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\Outline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\Point.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\Rotation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\RotationManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\Square.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SOIL\image_DXT.h">
+      <Filter>Game Engine\SOIL</Filter>
+    </ClInclude>
+    <ClInclude Include="SOIL\image_helper.h">
+      <Filter>Game Engine\SOIL</Filter>
+    </ClInclude>
+    <ClInclude Include="SOIL\SOIL.h">
+      <Filter>Game Engine\SOIL</Filter>
+    </ClInclude>
+    <ClInclude Include="SOIL\stb_image_aug.h">
+      <Filter>Game Engine\SOIL</Filter>
+    </ClInclude>
+    <ClInclude Include="SOIL\stbi_DDS_aug.h">
+      <Filter>Game Engine\SOIL</Filter>
+    </ClInclude>
+    <ClInclude Include="SOIL\stbi_DDS_aug_c.h">
+      <Filter>Game Engine\SOIL</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenGL\glut.h">
+      <Filter>Game Engine\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="FMOD\fmod.h">
+      <Filter>Game Engine\FMOD</Filter>
+    </ClInclude>
+    <ClInclude Include="FMOD\fmod.hpp">
+      <Filter>Game Engine\FMOD</Filter>
+    </ClInclude>
+    <ClInclude Include="FMOD\fmod_codec.h">
+      <Filter>Game Engine\FMOD</Filter>
+    </ClInclude>
+    <ClInclude Include="FMOD\fmod_common.h">
+      <Filter>Game Engine\FMOD</Filter>
+    </ClInclude>
+    <ClInclude Include="FMOD\fmod_dsp.h">
+      <Filter>Game Engine\FMOD</Filter>
+    </ClInclude>
+    <ClInclude Include="FMOD\fmod_dsp_effects.h">
+      <Filter>Game Engine\FMOD</Filter>
+    </ClInclude>
+    <ClInclude Include="FMOD\fmod_errors.h">
+      <Filter>Game Engine\FMOD</Filter>
+    </ClInclude>
+    <ClInclude Include="FMOD\fmod_output.h">
+      <Filter>Game Engine\FMOD</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_2DMatrix.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_3DMatrix.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_AnimatedSprite.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_Animation.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_Button.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_Client.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_Color.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_ColoredText.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_ConsoleHelper.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_Constants.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_DropdownMenu.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_EventListener.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_Font.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_Game.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_Helpers.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_Pair.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_Renderable.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_Resource.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_Server.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_Slider.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_Sound.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_Sprite.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_Text.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_TextBox.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_TextField.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_TextPrompt.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_TextRenderable.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_Texture.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_TileSet.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_Types.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_Vector.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="ICS\ICS_Window.h">
+      <Filter>Game Engine\ICS</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\ft2build.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\freetype.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftadvanc.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftbbox.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftbdf.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftbitmap.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftbzip2.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftcache.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftchapters.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftcid.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftcolor.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftdriver.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\fterrdef.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\fterrors.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftfntfmt.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftgasp.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftglyph.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftgxval.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftgzip.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftimage.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftincrem.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftlcdfil.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftlist.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftlogging.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftlzw.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftmac.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftmm.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftmodapi.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftmoderr.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftotval.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftoutln.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftparams.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftpfr.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftrender.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftsizes.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftsnames.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftstroke.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftsynth.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftsystem.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\fttrigon.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\fttypes.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ftwinfnt.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\otsvg.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\t1tables.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\ttnameid.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\tttables.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\tttags.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\config\ftconfig.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\config\ftheader.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\config\ftmodule.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\config\ftoption.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\config\ftstdlib.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\config\integer-types.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\config\mac-support.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\config\public-macros.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\autohint.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\cffotypes.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\cfftypes.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\ftcalc.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\ftdebug.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\ftdrv.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\ftgloadr.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\fthash.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\ftmemory.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\ftobjs.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\ftpsprop.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\ftrfork.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\ftserv.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\ftstream.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\fttrace.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\ftvalid.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\internal.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\psaux.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\pshints.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\sfnt.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\t1types.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\tttypes.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\wofftypes.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\services\svbdf.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\services\svcfftl.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\services\svcid.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\services\svfntfmt.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\services\svgldict.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\services\svgxval.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\services\svkern.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\services\svmetric.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\services\svmm.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\services\svotval.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\services\svpfr.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\services\svpostnm.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\services\svprop.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\services\svpscmap.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\services\svpsinfo.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\services\svsfnt.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\services\svttcmap.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\services\svtteng.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\services\svttglyf.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType\freetype\internal\services\svwinfnt.h">
+      <Filter>Game Engine\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Files\Colour.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Files\Cube Constants.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Files\Cube.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Files\Math.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Files\Outline.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Files\Point.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Files\Rotation.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Files\RotationManager.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Files\Rubiks.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Files\Square.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
