@@ -187,6 +187,7 @@ static void handleKeyboardEvent(int key, int eventType)
 static void update(float elapsed)
 {
 	cube.update(elapsed);
+	other.update(elapsed);
 }
 
 /**

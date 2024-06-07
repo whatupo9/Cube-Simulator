@@ -11,11 +11,7 @@ Rotation::Rotation(Point* point, const Point& centre, int axis, double degrees, 
 {
 	if (preceedingRotation)
 	{
-		_delay = preceedingRotation->getRemainingDuration();
-	}
-	else
-	{
-		_delay = 0.0;
+		_preceedingRotation = preceedingRotation;
 	}
 
 	if (clockwise)
@@ -27,15 +23,14 @@ Rotation::Rotation(Point* point, const Point& centre, int axis, double degrees, 
 
 bool Rotation::rotate(double elapsed)
 {
-	if (_delay == 0.0)
+	if (_preceedingRotation)
 	{
-		double t = elapsed - _delay;
-		if (t < 0)
+		double delay = _preceedingRotation->getRemainingDuration();
+		if (elapsed - delay < 0)
 		{
-			_delay -= elapsed;
 			return false;
 		}
-		elapsed = t;
+		elapsed -= delay;
 	}
 	clamp(elapsed, 0.0, _duration);
 	double degrees = elapsed / _duration * _degrees;
@@ -83,5 +78,6 @@ Point Rotation::getTarget() const
 
 double Rotation::getRemainingDuration() const
 {
-	return _degreesRotated / _degrees * _duration + _delay;
+	double delay = _preceedingRotation ? _preceedingRotation->getRemainingDuration() : 0.0;
+	return _duration - (_degreesRotated / _degrees * _duration) + delay;
 }

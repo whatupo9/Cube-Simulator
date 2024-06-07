@@ -24,8 +24,7 @@ const int PIECES_ON_A_CUBE = 27;
 
 const float MAX_COLOUR = 255.0f;
 
-const double ANIMATION_LENGTH = 10.3;
-const double SCREEN_SAVER_FACTOR = 10;
+const double ANIMATION_LENGTH = 0.3;
 
 const int LEFT = 0;
 const int RIGHT = 1;
@@ -33,6 +32,8 @@ const int DOWN = 2;
 const int UP = 3;
 const int BACK = 4;
 const int FRONT = 5;
+
+const double ROTATION_SPEED_UP_FACTOR = 1.5;
 
 const int L = 0;
 const int L_PRIME = 1;

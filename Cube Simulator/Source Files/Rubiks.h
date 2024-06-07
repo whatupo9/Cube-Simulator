@@ -202,25 +202,22 @@ private:
 			{
 				index = i / WIDTH * pow(WIDTH, 2) + i % WIDTH + pow(WIDTH, 2) - WIDTH;
 			}
-			if (_cubies[index]->isRotating())
-			{
-			}
 		}
 
 		for (int i = 0; i < pow(WIDTH, 2); i++)
 		{
 			if (axis == X_AXIS)
 			{
-				_cubies[i * WIDTH]/*.farthestCube(_cubies, WIDTH, side, i)*/->startRotation(axis, clockwise, _centre);
+				_cubies[i * WIDTH]->startRotation(axis, clockwise, _centre);
 			}
 			else if (axis == Y_AXIS)
 			{
-				_cubies[i]/*.farthestCube(_cubies, WIDTH, side, i)*/->startRotation(axis, clockwise, _centre);
+				_cubies[i]->startRotation(axis, clockwise, _centre);
 			}
 			else if (axis == Z_AXIS)
 			{
 				int index = i / WIDTH * pow(WIDTH, 2) + i % WIDTH + pow(WIDTH, 2) - WIDTH;
-				_cubies[index]->/*farthestCube(_cubies, WIDTH, side, i).*/startRotation(axis, clockwise, _centre);
+				_cubies[index]->startRotation(axis, clockwise, _centre);
 			}
 		}
 		updateArray(move);

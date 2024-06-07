@@ -5,48 +5,61 @@ RotationManager::RotationManager()
 	_rotations.resize(0);
 }
 
-void RotationManager::addRotation(Point* point, const Point& centre, int axis, double degrees, bool clockwise, double duration)
+RotationManager::RotationManager(const RotationManager& copy)
 {
-	int i = 0;
-	for (auto it = _rotations.begin(); it < _rotations.end(); it++)
+	for (int i = _rotations.size() - 1; i >= 0; i--)
 	{
-		if (_rotations[i][0].getPoint() == point)
-		{
-			it->emplace_back(point, centre, axis, degrees, clockwise, duration, &_rotations[i][0]);
-			_rotations[i][it->size() - 1].setStartingPoint(_rotations[i][it->size() - 2].getTarget());
-			for (auto it2 = _rotations[i].begin(); it2 < _rotations[i].end(); it2++)
-			{
-				it2->speedUp(1.5);
-			}
-			return;
-		}
-		i++;
+		//_rotations[i] = new Rotation(*copy._rotations[i]);
+	}
+}
+
+RotationManager::~RotationManager()
+{
+	for (int i = _rotations.size() - 1; i >= 0; i--)
+	{
+		//delete _rotations[i];
+	}
+}
+
+RotationManager& RotationManager::operator=(const RotationManager& copy)
+{
+	for (size_t i = 0; i < _rotations.size(); i++)
+	{
+		//delete _rotations[i];
 	}
 
-	std::vector<Rotation> newRotation(0);
-	newRotation.emplace_back(point, centre, axis, degrees, clockwise, duration);
-	_rotations.emplace_back(newRotation);
+	for (size_t i = 0; i < _rotations.size(); i++)
+	{
+		//_rotations[i] = new Rotation(*copy._rotations[i]);
+	}
+	return *this;
+}
+
+void RotationManager::addRotation(Point* point, const Point& centre, int axis, double degrees, bool clockwise, double duration)
+{
+	for (size_t i = 0; i < _rotations.size(); i++)
+	{
+		if (_rotations[i]->getPoint() == point)
+		{
+			_rotations.push_back(new Rotation(point, centre, axis, degrees, clockwise, duration, _rotations[i]));
+			_rotations[_rotations.size() - 1]->setStartingPoint(_rotations[i]->getTarget());
+			_rotations[i]->speedUp(ROTATION_SPEED_UP_FACTOR);
+			speedUp(point, i, ROTATION_SPEED_UP_FACTOR);
+			return;
+		}
+	}
+	_rotations.push_back(new Rotation(point, centre, axis, degrees, clockwise, duration));
 }
 
 void RotationManager::update(double elapsed)
 {
-	for (size_t i = 0; i < _rotations.size(); i++)
+	for (int i = _rotations.size() - 1; i >= 0; i--)
 	{
-		if (not _rotations[i][0].rotate(elapsed))
+		if (not _rotations[i]->rotate(elapsed))
 		{
 			continue;
 		}
-
-		//Delete the entire vector because the only rotation in it just finished
-		if (_rotations[i].size() == 1)
-		{
-			_rotations.erase(_rotations.begin() + i);
-			i--;
-			continue;
-		}
-
-		//Delete the first rotation in the vector, and the queued ones will be automatically moved forward
-		_rotations[i].erase(_rotations[i].begin());
+		_rotations.erase(_rotations.begin() + i);
 	}
 }
 
@@ -55,7 +68,13 @@ bool RotationManager::isRotating() const
 	return !_rotations.empty();
 }
 
-double RotationManager::timeRemaining(int queueIndex, int rotation)
+void RotationManager::speedUp(const Point* point, int size, double factor)
 {
-	return 0.0;
+	for (int i = 0; i < size; i++)
+	{
+		if (_rotations[i]->getPoint() == point)
+		{
+			_rotations[i]->speedUp(factor);
+		}
+	}
 }

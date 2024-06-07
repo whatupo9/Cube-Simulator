@@ -6,11 +6,17 @@
 
 class RotationManager
 {
-	std::vector<std::vector<Rotation>> _rotations;
+	std::vector<Rotation*> _rotations;
 
 public:
 
 	RotationManager();
+
+	RotationManager(const RotationManager& copy);
+
+	~RotationManager();
+
+	RotationManager& operator=(const RotationManager& copy);
 
 	void addRotation(Point* point, const Point& centre, int axis, double degrees, bool clockwise, double duration = ANIMATION_LENGTH);
 
@@ -18,7 +24,7 @@ public:
 
 	bool isRotating() const;
 
-	double timeRemaining(int queueIndex, int rotation);
+	void speedUp(const Point* point, int size, double factor);
 };
 
 #endif // !ROTATION_MANAGER_H
