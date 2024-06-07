@@ -189,23 +189,6 @@ private:
 
 		for (int i = 0; i < pow(WIDTH, 2); i++)
 		{
-			int index = 0;
-			if (axis == X_AXIS)
-			{
-				index = i * WIDTH;
-			}
-			else if (axis == Y_AXIS)
-			{
-				index = i;
-			}
-			else if (axis == Z_AXIS)
-			{
-				index = i / WIDTH * pow(WIDTH, 2) + i % WIDTH + pow(WIDTH, 2) - WIDTH;
-			}
-		}
-
-		for (int i = 0; i < pow(WIDTH, 2); i++)
-		{
 			if (axis == X_AXIS)
 			{
 				_cubies[i * WIDTH]->startRotation(axis, clockwise, _centre);
