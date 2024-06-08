@@ -2,21 +2,16 @@
 #define ROTATION_MANAGER_H
 
 #include <vector>
+#include <memory>
 #include "Rotation.h"
 
 class RotationManager
 {
-	std::vector<Rotation*> _rotations;
+	std::vector<std::shared_ptr<Rotation>> _rotations;
 
 public:
 
 	RotationManager();
-
-	RotationManager(const RotationManager& copy);
-
-	~RotationManager();
-
-	RotationManager& operator=(const RotationManager& copy);
 
 	void addRotation(Point* point, const Point& centre, int axis, double degrees, bool clockwise, double duration = ANIMATION_LENGTH);
 

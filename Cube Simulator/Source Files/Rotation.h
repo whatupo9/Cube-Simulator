@@ -1,6 +1,7 @@
 #ifndef ROTATION_H
 #define ROTATION_H
 
+#include <memory>
 #include "Point.h"
 
 class Rotation
@@ -12,14 +13,14 @@ class Rotation
 	double _degrees = 0.0;
 	double _degreesRotated = 0.0;
 	double _duration = 0.0;
-	const Rotation* _preceedingRotation = nullptr;
+	const std::shared_ptr<Rotation> _preceedingRotation = nullptr;
 	bool _clockwise = false;
 
 public:
 
 	Rotation() = default;
 
-	Rotation(Point* point, const Point& centre, int axis, double degrees, bool clockwise, double duration = ANIMATION_LENGTH, const Rotation* preceedingRotation = nullptr);
+	Rotation(Point* point, const Point& centre, int axis, double degrees, bool clockwise, double duration = ANIMATION_LENGTH, const std::shared_ptr<Rotation> preceedingRotation = nullptr);
 
 	bool rotate(double elapsed);
 
