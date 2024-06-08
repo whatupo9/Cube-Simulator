@@ -8,7 +8,6 @@ class Rotation
 {
 	Point* _point = nullptr;
 	Point _centre;
-	Point _target;
 	int _axis = 0;
 	double _degrees = 0.0;
 	double _degreesRotated = 0.0;
@@ -26,11 +25,7 @@ public:
 
 	void speedUp(double factor);
 
-	void setStartingPoint(const Point& point);
-
 	Point* getPoint() const;
-
-	Point getTarget() const;
 
 	double getRemainingDuration() const;
 };

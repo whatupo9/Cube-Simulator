@@ -11,14 +11,6 @@ void RotationManager::addRotation(Point* point, const Point& centre, int axis, d
 	_rotations.push_back(std::make_shared<Rotation>(point, centre, axis, degrees, clockwise));
 	_turnsNum.push_back(turnNum);
 
-	for (int i = _rotations.size() - 1; i >= 0; i--)
-	{
-		if (point == _rotations[i]->getPoint() and _turnsNum[i] != turnNum)
-		{
-			_rotations[_rotations.size() - 1]->setStartingPoint(_rotations[i]->getTarget());
-		}
-	}
-
 	if (turnNum > _highestTurn)
 	{
 		_highestTurn = turnNum;
