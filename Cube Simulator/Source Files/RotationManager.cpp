@@ -48,3 +48,8 @@ void RotationManager::speedUp(const Point* point, int size, double factor)
 		}
 	}
 }
+
+const std::shared_ptr<Rotation> RotationManager::getRotation() const
+{
+	return _rotations[0];
+}

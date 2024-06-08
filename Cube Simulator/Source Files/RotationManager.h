@@ -20,6 +20,8 @@ public:
 	bool isRotating() const;
 
 	void speedUp(const Point* point, int size, double factor);
+
+	const std::shared_ptr<Rotation> getRotation() const;
 };
 
 #endif // !ROTATION_MANAGER_H
