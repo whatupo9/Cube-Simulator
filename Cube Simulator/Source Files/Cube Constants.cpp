@@ -1,13 +1,5 @@
 #include "Cube Constants.h"
 
-int arrayChange(int move, int size)
-{
-	if (size % 2 == 0)
-	{
-	}
-	return 0;
-}
-
 int directionIndexChange(int direction, int arrayWidth)
 {
 	if (direction == LEFT)
@@ -40,4 +32,22 @@ int directionIndexChange(int direction, int arrayWidth)
 int directionToAxis(int direction)
 {
 	return (direction - (direction % 2)) / 2;
+}
+
+ICS_Pair<int> calculateNewPositionOnCube(int width, int move, int index)
+{
+	if (move == L_PRIME)
+	{
+		if (index == 0)
+		{
+			return ICS_Pair<int>((width - 1) * width, (width - 2) * width);
+		}
+		else if (index == width - (width - 1))
+		{
+			if (width)
+			{
+				return ICS_Pair<int>((width - 2) * width, (width - 3) * width);
+			}
+		}
+	}
 }

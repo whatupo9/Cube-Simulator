@@ -184,8 +184,8 @@ private:
 
 	void turn(int move)
 	{
-		bool clockwise = move % 2 == 1;
-		int axis = directionToAxis(int(move / 4));
+		bool clockwise = move % 2 == 0;
+		int axis = directionToAxis(int(move / 2));
 
 		for (int i = 0; i < pow(WIDTH, 2); i++)
 		{
@@ -210,6 +210,7 @@ private:
 	{
 		for (int i = 0; i < pow(WIDTH, 2); i++)
 		{
+			//calculateNewPositionOnCube(WIDTH, move, i, )
 			//swap<Cube*>(_cubies[ARRAY_CHANGES[move][i][0]], _cubies[ARRAY_CHANGES[move][i][1]]);
 		}
 	}

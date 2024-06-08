@@ -1,4 +1,5 @@
 #include <array>
+#include "ICS_Pair.h"
 
 const int X_AXIS = 0;
 const int Y_AXIS = 1;
@@ -35,16 +36,16 @@ const int FRONT = 5;
 
 const double ROTATION_SPEED_UP_FACTOR = 1.5;
 
-const int L = 0;
-const int L_PRIME = 1;
+const int L_PRIME = 0;
+const int L = 1;
 const int R = 2;
 const int R_PRIME = 3;
-const int D = 4;
-const int D_PRIME = 5;
+const int D_PRIME = 4;
+const int D = 5;
 const int U = 6;
 const int U_PRIME = 7;
-const int B = 8;
-const int B_PRIME = 9;
+const int B_PRIME = 8;
+const int B = 9;
 const int F = 10;
 const int F_PRIME = 11;
 const int X = 12;
@@ -66,8 +67,8 @@ const std::array<std::array<int, 4>, 6> FACE_CORNERS =
 	{{ 7, 6, 5, 4 }}
 } };
 
-int arrayChange(int move, int size);
-
 int directionIndexChange(int direction, int arrayWidth);
 
 int directionToAxis(int direction);
+
+ICS_Pair<int> calculateNewPositionOnCube(int width, int move, int index);
