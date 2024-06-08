@@ -1,14 +1,13 @@
 #include "Rotation.h"
 
-Rotation::Rotation(Point* point, const Point& centre, int axis, double degrees, bool clockwise, double duration, const std::shared_ptr<Rotation> preceedingRotation) :
+Rotation::Rotation(Point* point, const Point& centre, int axis, double degrees, bool clockwise, const std::shared_ptr<Rotation> preceedingRotation) :
 	_point(point),
 	_centre(centre),
 	_target(*_point),
 	_axis(axis),
 	_degrees(degrees),
-	_duration(duration),
-	_clockwise(clockwise),
-	_preceedingRotation(preceedingRotation)
+	_preceedingRotation(preceedingRotation),
+	_clockwise(clockwise)
 {
 	if (clockwise)
 	{

@@ -8,20 +8,23 @@
 class RotationManager
 {
 	std::vector<std::shared_ptr<Rotation>> _rotations;
+	std::vector<int> _turnsNum;
+	int _currentTurn = 0;
+	int _highestTurn = 0;
 
 public:
 
 	RotationManager();
 
-	void addRotation(Point* point, const Point& centre, int axis, double degrees, bool clockwise, double duration = ANIMATION_LENGTH);
+	void addRotation(Point* point, const Point& centre, int axis, double degrees, bool clockwise, int turnNum);
 
 	void update(double elapsed);
 
 	bool isRotating() const;
 
-	void speedUp(const Point* point, int size, double factor);
+private:
 
-	std::shared_ptr<Rotation> getRotation() const;
+	void speedUp(int turnNum);
 };
 
 #endif // !ROTATION_MANAGER_H

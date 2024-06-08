@@ -113,11 +113,11 @@ Square& Square::operator=(const Square& copy)
 	return *this;
 }
 
-void Square::startRotation(RotationManager& manager, int axis, bool clockwise, const Point& centre)
+void Square::startRotation(RotationManager& manager, int axis, int moveNum, bool clockwise, const Point& centre)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		manager.addRotation(_corners[i], centre, axis, 90.0, clockwise, ANIMATION_LENGTH);
+		manager.addRotation(_corners[i], centre, axis, 90.0, clockwise, moveNum);
 	}
 }
 

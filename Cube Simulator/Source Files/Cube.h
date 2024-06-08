@@ -32,10 +32,11 @@ class Cube
 	std::array<Colour, SIDES_ON_A_CUBE> _faceColours;
 	Colour* _outlineColour = nullptr;
 	Point _centre;
-	RotationManager _manager;
 
 	double* _outlineWidth = nullptr;
 	double _width;
+
+	int _moveNum = 0;
 
 public:
 	Cube();
@@ -50,15 +51,11 @@ public:
 
 	void draw(double zoom);
 
-	void update(double elapsed);
-
-	void startRotation(int axis, bool clockwise = true, const Point& centre = Point());
+	void startRotation(int axis, int moveNum, RotationManager& manager, bool clockwise = true, const Point& centre = Point());
 
 	Point** findFaceCorners(int face) const;
 
 	Cube& farthestCube(std::vector<Cube>& cubies, int width, int direction, int index);
-
-	bool isRotating() const;
 };
 
 #endif // !CUBE_H

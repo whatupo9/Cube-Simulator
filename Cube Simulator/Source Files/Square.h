@@ -38,7 +38,7 @@ public:
 
 	Square& operator=(const Square& copy);
 
-	void startRotation(RotationManager& manager, int axis, bool clockwise = true, const Point& centre = Point());
+	void startRotation(RotationManager& manager, int axis, int moveNum, bool clockwise = true, const Point& centre = Point());
 
 	void updateOutline();
 

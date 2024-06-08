@@ -3,13 +3,6 @@
 
 #include "Cube.h"
 
-class ints
-{
-public:
-	int one;
-	int two;
-};
-
 template <int WIDTH>
 class Rubiks
 {
@@ -19,6 +12,8 @@ class Rubiks
 	std::array<Colour, SIDES_ON_A_CUBE> _faceColours;
 	const Colour* _outlineColour = nullptr;
 	double _width = 1.0;
+	int _moveNum = 0;
+	RotationManager _manager;
 
 public:
 
@@ -63,6 +58,21 @@ public:
 			_cubies[i] = new Cube(*copy._cubies[i]);
 		}
 	}
+
+	Rubiks& operator=(const Rubiks& copy)
+	{
+		_centre = copy._centre;
+		_width = copy._width / WIDTH;
+		_faceColours = copy._faceColours;
+		_outlineColour = copy._outlineColour ? new Colour(*copy._outlineColour) : copy._outlineColour;
+
+		_cubies.resize(CUBIES_NUM);
+		for (int i = 0; i < CUBIES_NUM; i++)
+		{
+			_cubies[i] = new Cube(*copy._cubies[i]);
+		}
+	}
+
 	void draw(double zoom)
 	{
 		for (int i = 0; i < CUBIES_NUM; i++)
@@ -73,10 +83,7 @@ public:
 
 	void update(double elapsed)
 	{
-		for (int i = 0; i < CUBIES_NUM; i++)
-		{
-			_cubies[i]->update(elapsed);
-		}
+		_manager.update(elapsed);
 	}
 
 	void getMove(int key)
@@ -168,6 +175,7 @@ public:
 		{
 			rotate(move);
 		}
+		_moveNum++;
 	}
 
 private:
@@ -178,7 +186,7 @@ private:
 		bool clockwise = (move - MOVES_NUM) % 2 == 0;
 		for (int i = 0; i < CUBIES_NUM; i++)
 		{
-			_cubies[i]->startRotation(axis, clockwise, _centre);
+			_cubies[i]->startRotation(axis, _moveNum, _manager, clockwise, _centre);
 		}
 	}
 
@@ -187,20 +195,37 @@ private:
 		bool clockwise = move % 2 == 0;
 		int axis = directionToAxis(int(move / 2));
 
+		auto* indexArray = new int[pow(WIDTH, 2)];
+
+		std::shared_ptr<Rotation> preceedingRotation(nullptr);
+
 		for (int i = 0; i < pow(WIDTH, 2); i++)
 		{
 			if (axis == X_AXIS)
 			{
-				_cubies[i * WIDTH]->startRotation(axis, clockwise, _centre);
 			}
 			else if (axis == Y_AXIS)
 			{
-				_cubies[i]->startRotation(axis, clockwise, _centre);
+			}
+			else if (axis == Z_AXIS)
+			{
+			}
+		}
+
+		for (int i = 0; i < pow(WIDTH, 2); i++)
+		{
+			if (axis == X_AXIS)
+			{
+				_cubies[i * WIDTH]->startRotation(axis, _moveNum, _manager, clockwise, _centre);
+			}
+			else if (axis == Y_AXIS)
+			{
+				_cubies[i]->startRotation(axis, _moveNum, _manager, clockwise, _centre);
 			}
 			else if (axis == Z_AXIS)
 			{
 				int index = i / WIDTH * pow(WIDTH, 2) + i % WIDTH + pow(WIDTH, 2) - WIDTH;
-				_cubies[index]->startRotation(axis, clockwise, _centre);
+				_cubies[index]->startRotation(axis, _moveNum, _manager, clockwise, _centre);
 			}
 		}
 		updateArray(move);

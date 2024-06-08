@@ -57,7 +57,6 @@ Cube::Cube(const Cube& copy) :
 	_faceColours(copy._faceColours),
 	_outlineColour(copy._outlineColour ? new Colour(copy._outlineColour) : nullptr),
 	_centre(copy._centre),
-	_manager(copy._manager),
 	_width(copy._width)
 {
 	for (int i = 0; i < CORNERS_ON_A_CUBE; i++)
@@ -93,7 +92,6 @@ Cube& Cube::operator=(const Cube& copy)
 {
 	_width = copy._width;
 	_centre = copy._centre;
-	_manager = copy._manager;
 	_faceColours = copy._faceColours;
 
 	if (_outlineColour)
@@ -127,27 +125,22 @@ void Cube::draw(double zoom)
 	}
 }
 
-void Cube::update(double elapsed)
-{
-	_manager.update(elapsed);
-}
-
-void Cube::startRotation(int axis, bool clockwise, const Point& centre)
+void Cube::startRotation(int axis, int moveNum, RotationManager& manager, bool clockwise, const Point& centre)
 {
 	if (axis == X_AXIS)
 	{
-		_faces[2].startRotation(_manager, axis, clockwise, centre);
-		_faces[4].startRotation(_manager, axis, clockwise, centre);
+		_faces[2].startRotation(manager, axis, moveNum, clockwise, centre);
+		_faces[4].startRotation(manager, axis, moveNum, clockwise, centre);
 	}
 	else if (axis == Y_AXIS)
 	{
-		_faces[0].startRotation(_manager, axis, clockwise, centre);
-		_faces[5].startRotation(_manager, axis, clockwise, centre);
+		_faces[0].startRotation(manager, axis, moveNum, clockwise, centre);
+		_faces[5].startRotation(manager, axis, moveNum, clockwise, centre);
 	}
 	else if (axis == Z_AXIS)
 	{
-		_faces[1].startRotation(_manager, axis, clockwise, centre);
-		_faces[3].startRotation(_manager, axis, clockwise, centre);
+		_faces[1].startRotation(manager, axis, moveNum, clockwise, centre);
+		_faces[3].startRotation(manager, axis, moveNum, clockwise, centre);
 	}
 }
 
@@ -196,9 +189,4 @@ Cube& Cube::farthestCube(std::vector<Cube>& cubies, int width, int direction, in
 		return nextCube.farthestCube(cubies, width, direction, index);
 	}
 	return *this;
-}
-
-bool Cube::isRotating() const
-{
-	return _manager.isRotating();
 }

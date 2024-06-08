@@ -131,63 +131,16 @@ static void handleMouseWheel(int, int, int rotation)
 }
 
 static void handleKeyboardEvent(int key, int eventType)
-{/*
-	if (key == ICS_KEY_SHIFT and eventType == ICS_EVENT_PRESS)
-	{
-		clockwise = false;
-	}
-	else if (key == ICS_KEY_SHIFT and eventType == ICS_EVENT_RELEASE)
-	{
-		clockwise = true;
-	}*/
-
+{
 	if (eventType == ICS_EVENT_PRESS)
 	{
 		cube.getMove(key);
 	}
-
-	if (key == ICS_KEY_X and eventType == ICS_EVENT_PRESS)
-	{
-		other.startRotation(X_AXIS, clockwise);
-	}
-	else if (key == ICS_KEY_Y and eventType == ICS_EVENT_PRESS)
-	{
-		other.startRotation(Y_AXIS, clockwise);
-	}
-	else if (key == ICS_KEY_Z and eventType == ICS_EVENT_PRESS)
-	{
-		other.startRotation(Z_AXIS, clockwise);
-	}
-	//else if (key == ICS_KEY_R and eventType == ICS_EVENT_PRESS)
-	//{
-	//	cube.turn(RIGHT, clockwise, 90.0);
-	//}
-	//else if (key == ICS_KEY_L and eventType == ICS_EVENT_PRESS)
-	//{
-	//	cube.turn(LEFT, clockwise, 90.0);
-	//}
-	//else if (key == ICS_KEY_U and eventType == ICS_EVENT_PRESS)
-	//{
-	//	cube.turn(UP, clockwise, 90.0);
-	//}
-	//else if (key == ICS_KEY_D and eventType == ICS_EVENT_PRESS)
-	//{
-	//	cube.turn(DOWN, clockwise, 90.0);
-	//}
-	//else if (key == ICS_KEY_F and eventType == ICS_EVENT_PRESS)
-	//{
-	//	cube.turn(FRONT, clockwise, 90.0);
-	//}
-	//else if (key == ICS_KEY_B and eventType == ICS_EVENT_PRESS)
-	//{
-	//	cube.turn(BACK, clockwise, 90.0);
-	//}
 }
 
 static void update(float elapsed)
 {
 	cube.update(elapsed);
-	other.update(elapsed);
 }
 
 /**
