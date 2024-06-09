@@ -25,7 +25,7 @@ const int PIECES_ON_A_CUBE = 27;
 
 const float MAX_COLOUR = 255.0f;
 
-const double ANIMATION_LENGTH = 5.0;
+const double ANIMATION_LENGTH = 0.3;
 
 const int LEFT = 0;
 const int RIGHT = 1;
