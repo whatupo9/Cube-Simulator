@@ -59,6 +59,17 @@ public:
 		}
 	}
 
+	~Rubiks()
+	{
+		for (int i = 0; i < CUBIES_NUM; i++)
+		{
+			if (_cubies[i])
+			{
+				delete _cubies[i];
+			}
+		}
+	}
+
 	Rubiks& operator=(const Rubiks& copy)
 	{
 		_centre = copy._centre;
