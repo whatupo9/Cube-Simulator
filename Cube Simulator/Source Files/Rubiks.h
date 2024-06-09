@@ -206,8 +206,6 @@ private:
 		bool clockwise = move % 2 == 0;
 		int axis = directionToAxis(int(move / 2));
 
-		auto* indexArray = new int[pow(WIDTH, 2)];
-
 		std::shared_ptr<Rotation> preceedingRotation(nullptr);
 
 		for (int i = 0; i < pow(WIDTH, 2); i++)
@@ -244,100 +242,6 @@ private:
 
 	void updateArray(int move)
 	{
-		int axis = (move - MOVES_NUM) / 2;
-		bool clockwise = (move - MOVES_NUM) % 2 == 0;
-
-		std::vector<Cube*> tempCubies(CUBIES_NUM);
-		for (int i = 0; i < WIDTH; ++i)
-		{
-			for (int j = 0; j < WIDTH; ++j)
-			{
-				for (int k = 0; k < WIDTH; ++k)
-				{
-					int index = i * WIDTH * WIDTH + j * WIDTH + k;
-					int newIndex = getRotatedIndex(index, axis, clockwise);
-					tempCubies[newIndex] = _cubies[index];
-				}
-			}
-		}
-		_cubies = tempCubies;
-	}
-	std::vector<int> getLayerIndices(int layer)
-	{
-		std::vector<int> indices;
-		indices.reserve(WIDTH * WIDTH);
-
-		switch (layer)
-		{
-		case 0: // X-axis layer
-			for (int y = 0; y < WIDTH; ++y)
-			{
-				for (int z = 0; z < WIDTH; ++z)
-				{
-					indices.push_back(y * WIDTH * WIDTH + layer * WIDTH + z);
-				}
-			}
-			break;
-		case 1: // Y-axis layer
-			for (int x = 0; x < WIDTH; ++x)
-			{
-				for (int z = 0; z < WIDTH; ++z)
-				{
-					indices.push_back(layer * WIDTH * WIDTH + x * WIDTH + z);
-				}
-			}
-			break;
-		case 2: // Z-axis layer
-			for (int x = 0; x < WIDTH; ++x)
-			{
-				for (int y = 0; y < WIDTH; ++y)
-				{
-					indices.push_back(y * WIDTH * WIDTH + x * WIDTH + layer);
-				}
-			}
-			break;
-		}
-		return indices;
-	}
-
-	int getRotatedIndex(int index, int axis, bool clockwise)
-	{
-		int x = index % WIDTH;
-		int y = (index / WIDTH) % WIDTH;
-		int z = index / (WIDTH * WIDTH);
-
-		switch (axis)
-		{
-		case X_AXIS:
-			if (clockwise)
-			{
-				return index + WIDTH * WIDTH - (y * WIDTH + z + 1);
-			}
-			else
-			{
-				return index + y * WIDTH + z + 1;
-			}
-		case Y_AXIS:
-			if (clockwise)
-			{
-				return index - WIDTH + WIDTH * WIDTH * (z + 1);
-			}
-			else
-			{
-				return index + WIDTH - WIDTH * WIDTH * z;
-			}
-		case Z_AXIS:
-			if (clockwise)
-			{
-				return index - WIDTH * WIDTH * (x + 1) + WIDTH;
-			}
-			else
-			{
-				return index + WIDTH * WIDTH * x - WIDTH;
-			}
-		default:
-			return index;
-		}
 	}
 };
 
