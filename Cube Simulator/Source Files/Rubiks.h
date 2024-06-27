@@ -206,21 +206,6 @@ private:
 		bool clockwise = move % 2 == 0;
 		int axis = directionToAxis(int(move / 2));
 
-		std::shared_ptr<Rotation> preceedingRotation(nullptr);
-
-		for (int i = 0; i < pow(WIDTH, 2); i++)
-		{
-			if (axis == X_AXIS)
-			{
-			}
-			else if (axis == Y_AXIS)
-			{
-			}
-			else if (axis == Z_AXIS)
-			{
-			}
-		}
-
 		for (int i = 0; i < pow(WIDTH, 2); i++)
 		{
 			if (axis == X_AXIS)
@@ -242,6 +227,121 @@ private:
 
 	void updateArray(int move)
 	{
+		// Determine the axis of rotation and whether it's clockwise or counter-clockwise
+		int axis = directionToAxis(int(move / 2));
+		bool clockwise = move % 2 == 0;
+
+		// Create a copy of the current _cubies array
+		std::vector<Cube*> newCubies(_cubies);
+
+		for (int x = 0; x < WIDTH; ++x)
+		{
+			for (int y = 0; y < WIDTH; ++y)
+			{
+				if (move == U)
+				{
+					int oldIndex = x * WIDTH + y;
+					int newIndex = 0;
+
+					if (oldIndex % WIDTH == 0 and oldIndex != 0)
+					{
+						newIndex = oldIndex - WIDTH;
+					}
+					else if ((oldIndex + 1) % WIDTH == 0 and oldIndex != pow(WIDTH, 2))
+					{
+						newIndex = oldIndex + WIDTH;
+					}
+					else if (x + 1 == WIDTH)
+					{
+						newIndex = oldIndex - 1;
+					}
+					else if (x == 0)
+					{
+						newIndex = oldIndex + 1;
+					}
+
+					newCubies[newIndex] = _cubies[oldIndex];
+				}
+			}
+		}
+
+		//// Depending on the axis, rearrange the cubes
+		//if (axis == X_AXIS)
+		//{
+		//	// Rearrange for X-axis rotation
+		//	for (int i = 0; i < WIDTH; ++i)
+		//	{
+		//		for (int j = 0; j < WIDTH; ++j)
+		//		{
+		//			for (int k = 0; k < WIDTH; ++k)
+		//			{
+		//				int oldIndex = i * WIDTH * WIDTH + j * WIDTH + k;
+		//				int newIndex;
+		//				if (clockwise)
+		//				{
+		//					newIndex = i * WIDTH * WIDTH + k * WIDTH + (WIDTH - 1 - j);
+		//				}
+		//				else
+		//				{
+		//					newIndex = i * WIDTH * WIDTH + (WIDTH - 1 - k) * WIDTH + j;
+		//				}
+		//				newCubies[newIndex] = _cubies[oldIndex];
+		//			}
+		//		}
+		//	}
+		//}
+		//else if (axis == Y_AXIS)
+		//{
+		//	// Rearrange for Y-axis rotation
+		//	for (int i = 0; i < WIDTH; ++i)
+		//	{
+		//		for (int j = 0; j < WIDTH; ++j)
+		//		{
+		//			for (int k = 0; k < WIDTH; ++k)
+		//			{
+		//				int oldIndex = i * WIDTH * WIDTH + j * WIDTH + k;
+		//				int newIndex;
+		//				if (clockwise)
+		//				{
+		//					newIndex = (WIDTH - 1 - k) * WIDTH * WIDTH + j * WIDTH + i;
+		//				}
+		//				else
+		//				{
+		//					newIndex = k * WIDTH * WIDTH + j * WIDTH + (WIDTH - 1 - i);
+		//				}
+		//				newCubies[newIndex] = _cubies[oldIndex];
+		//			}
+		//		}
+		//	}
+		//}
+		//else if (axis == Z_AXIS)
+		//{
+		//	// Rearrange for Z-axis rotation
+		//	for (int i = 0; i < WIDTH; ++i)
+		//	{
+		//		for (int j = 0; j < WIDTH; ++j)
+		//		{
+		//			for (int k = 0; k < WIDTH; ++k)
+		//			{
+		//				int oldIndex = i * WIDTH * WIDTH + j * WIDTH + k;
+		//				int newIndex;
+		//				if (clockwise)
+		//				{
+		//					newIndex = j * WIDTH * WIDTH + (WIDTH - 1 - i) * WIDTH + k;
+		//				}
+		//				else
+		//				{
+		//					newIndex = (WIDTH - 1 - j) * WIDTH * WIDTH + i * WIDTH + k;
+		//				}
+		//				newCubies[newIndex] = _cubies[oldIndex];
+		//			}
+		//		}
+		//	}
+		//}
+
+		if (move == U)
+			// Update the _cubies array
+			_cubies = newCubies;
 	}
 };
 
