@@ -175,7 +175,7 @@ Cube& Cube::farthestCube(std::vector<Cube>& cubies, int width, int direction, in
 		positive = false;
 	}
 
-	if (nextCube._centre.getPoint(axis) > this->_centre.getPoint(axis) and positive)
+	if (nextCube._centre.getCoordinate(axis) > this->_centre.getCoordinate(axis) and positive)
 	{
 		return nextCube.farthestCube(cubies, width, direction, index);
 	}
@@ -184,7 +184,7 @@ Cube& Cube::farthestCube(std::vector<Cube>& cubies, int width, int direction, in
 		return *this;
 	}
 
-	if (nextCube._centre.getPoint(axis) < this->_centre.getPoint(axis) and not positive)
+	if (nextCube._centre.getCoordinate(axis) < this->_centre.getCoordinate(axis) and not positive)
 	{
 		return nextCube.farthestCube(cubies, width, direction, index);
 	}
