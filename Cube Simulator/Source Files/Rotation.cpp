@@ -7,8 +7,7 @@ Rotation::Rotation(Point* point, const Point& centre, int axis, double degrees, 
 	_degrees(degrees),
 	_preceedingRotation(preceedingRotation),
 	_clockwise(clockwise)
-{
-}
+{}
 
 bool Rotation::rotate(double elapsed)
 {
@@ -27,6 +26,7 @@ bool Rotation::rotate(double elapsed)
 
 	double realDegrees = _clockwise ? -degrees : degrees;
 
+	//TODO change rotations to use new function
 	_point->rotate(_centre, realDegrees, _axis);
 
 	_degreesRotated += degrees;
