@@ -41,24 +41,21 @@ Point::Point() :
 	_x(0),
 	_y(0),
 	_z(0)
-{
-}
+{}
 
 Point::Point(int x, int y, int z) :
 	_x(double(x)),
 	_y(double(y)),
 	_z(double(z))
-{
-}
+{}
 
 Point::Point(double x, double y, double z) :
 	_x(x),
 	_y(y),
 	_z(z)
-{
-}
+{}
 
-Point::Point(const Point* copy)
+explicit Point::Point(const Point* copy)
 {
 	if (copy)
 	{
@@ -117,7 +114,7 @@ double Point::getZ() const
 	return _z;
 }
 
-double Point::getPoint(int axis) const
+double Point::getCoordinate(int axis) const
 {
 	if (axis == X_AXIS)
 	{
@@ -134,22 +131,24 @@ double Point::getPoint(int axis) const
 	return 0;
 }
 
-void Point::draw() const
+void drawPoint(const Point& point)
 {
-	glVertex3d(_x, _y, _z);
+	glVertex3d(point.getX(), point.getY(), point.getZ());
 }
 
-void Point::rotate(const Point& centre, double degrees, int axis)
+void rotatePoint(Point& point, const Point& centre, double degrees, int axis)
 {
-	rotatePoint(_x, _y, _z, centre.getX(), centre.getY(), centre.getZ(), degrees, axis);
+	double theta = degreesToRadians(degrees);
+	point.setX(centre.getX() + (point.getX() - centre.getX()) * std::cos(theta) - (point.getY() - centre.getY()) * std::sin(theta));
+	point.setY(centre.getY() + (point.getX() - centre.getX()) * std::sin(theta) + (point.getY() - centre.getY()) * std::cos(theta));
 }
 
-void Point::snapToGrid(double interval)
+void snapPointToGrid(Point& point, double interval)
 {
 	if (interval > 0)
 	{
-		_x = round(_x / interval) * interval;
-		_y = round(_y / interval) * interval;
-		_z = round(_z / interval) * interval;
+		point.setX(round(point.getX() / interval) * interval);
+		point.setY(round(point.getY() / interval) * interval);
+		point.setZ(round(point.getZ() / interval) * interval);
 	}
 }

@@ -25,7 +25,7 @@ public:
 
 	Point(double x, double y, double z);
 
-	Point(const Point* copy);
+	explicit Point(const Point* copy);
 
 	void setX(double x);
 
@@ -45,13 +45,13 @@ public:
 
 	double getZ() const;
 
-	double getPoint(int axis) const;
-
-	void draw() const;
-
-	void rotate(const Point& centre, double degrees, int axis);
-
-	void snapToGrid(double interval = 1.0);
+	double getCoordinate(int axis) const;
 };
+
+void drawPoint(const Point& point);
+
+void rotatePoint(Point& point, const Point& centre, double degrees, int axis);
+
+void snapPointToGrid(Point& point, double interval = 1.0);
 
 #endif // !POINT_H
