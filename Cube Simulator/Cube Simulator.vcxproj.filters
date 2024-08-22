@@ -118,9 +118,6 @@
     <ClCompile Include="Source Files\Cube.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source Files\Math.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source Files\Outline.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -583,9 +580,6 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Source Files\Cube.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source Files\Math.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Source Files\Outline.h">

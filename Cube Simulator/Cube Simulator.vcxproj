@@ -166,7 +166,6 @@
     <ClCompile Include="Source Files\Colour.cpp" />
     <ClCompile Include="Source Files\Cube Constants.cpp" />
     <ClCompile Include="Source Files\Cube.cpp" />
-    <ClCompile Include="Source Files\Math.cpp" />
     <ClCompile Include="Source Files\Outline.cpp" />
     <ClCompile Include="Source Files\Point.cpp" />
     <ClCompile Include="Source Files\Rotation.cpp" />
@@ -323,7 +322,6 @@
     <ClInclude Include="Source Files\Colour.h" />
     <ClInclude Include="Source Files\Cube Constants.h" />
     <ClInclude Include="Source Files\Cube.h" />
-    <ClInclude Include="Source Files\Math.h" />
     <ClInclude Include="Source Files\Outline.h" />
     <ClInclude Include="Source Files\Point.h" />
     <ClInclude Include="Source Files\Rotation.h" />

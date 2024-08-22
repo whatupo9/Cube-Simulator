@@ -1,6 +1,7 @@
-#include "Point.h"
-
+#include <corecrt_math_defines.h>
 #include <glut.h>
+#include "Cube Constants.h"
+#include "Point.h"
 
 double& Point::operator[](const int index)
 {
@@ -134,6 +135,11 @@ double Point::getCoordinate(int axis) const
 void drawPoint(const Point* point)
 {
 	glVertex3d(point->getX(), point->getY(), point->getZ());
+}
+
+double degreesToRadians(double degrees)
+{
+	return degrees * M_PI / 180.0;
 }
 
 void rotatePoint(Point* point, const Point& centre, double degrees, int axis)
