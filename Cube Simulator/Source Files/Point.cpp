@@ -131,9 +131,9 @@ double Point::getCoordinate(int axis) const
 	return 0;
 }
 
-void drawPoint(const Point& point)
+void drawPoint(const Point* point)
 {
-	glVertex3d(point.getX(), point.getY(), point.getZ());
+	glVertex3d(point->getX(), point->getY(), point->getZ());
 }
 
 void rotatePoint(Point& point, const Point& centre, double degrees, int axis)
