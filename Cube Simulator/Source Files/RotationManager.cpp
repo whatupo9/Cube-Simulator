@@ -29,17 +29,13 @@ void RotationManager::update(double elapsed)
 		return;
 	}
 
-	if (_rotations.size() > 8)
-	{
-		bool l = true;
-	}
-
 	double timeLeft = 0.0;
 
 	do
 	{
 		double otherTimeLeft = _rotations[0]->getRemainingDuration();
-		timeLeft = (otherTimeLeft < elapsed) ? elapsed - otherTimeLeft : 0.0;
+		timeLeft = elapsed - otherTimeLeft;
+		clamp(timeLeft, 0.0, elapsed);
 
 		for (int i = 0; i < _rotations.size(); i++)
 		{
