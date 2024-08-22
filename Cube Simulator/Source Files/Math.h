@@ -1,3 +1,6 @@
+#ifndef MATH_H
+#define MATH_H
+
 double degreesToRadians(double degrees);
 
 template <typename T>
@@ -31,3 +34,5 @@ T clamp(T& value, T min, T max)
 	}
 	return value;
 }
+
+#endif // !MATH_H
