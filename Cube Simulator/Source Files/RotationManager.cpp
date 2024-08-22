@@ -1,3 +1,4 @@
+#include <cmath>
 #include <memory>
 #include "Cube Constants.h"
 #include "Point.h"
