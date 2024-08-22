@@ -4,6 +4,7 @@
 #include "Point.h"
 #include "Colour.h"
 #include <array>
+#include <vector>
 
 class Outline
 {
