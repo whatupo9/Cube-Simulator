@@ -55,7 +55,7 @@ Point::Point(double x, double y, double z) :
 	_z(z)
 {}
 
-explicit Point::Point(const Point* copy)
+Point::Point(const Point* copy)
 {
 	if (copy)
 	{
