@@ -2,6 +2,7 @@
 #define ROTATION_H
 
 #include <memory>
+#include "Cube Constants.h"
 #include "Point.h"
 
 class Rotation
