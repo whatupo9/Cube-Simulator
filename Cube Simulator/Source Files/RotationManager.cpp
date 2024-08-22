@@ -1,4 +1,4 @@
-#include <cmath>
+#include <algorithm>
 #include <memory>
 #include "Cube Constants.h"
 #include "Point.h"
@@ -36,7 +36,7 @@ void RotationManager::update(double elapsed)
 	{
 		double otherTimeLeft = _rotations[0]->getRemainingDuration();
 		timeLeft = elapsed - otherTimeLeft;
-		clamp(timeLeft, 0.0, elapsed);
+		std::clamp(timeLeft, 0.0, elapsed);
 
 		for (int i = 0; i < _rotations.size(); i++)
 		{
