@@ -15,7 +15,7 @@ public:
 
 	Colour(int red, int green, int blue);
 
-	Colour(const Colour* copy);
+	explicit Colour(const Colour* copy);
 
 	void setColour(const Colour* colour);
 
