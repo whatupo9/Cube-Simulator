@@ -1,3 +1,6 @@
+#ifndef CUBE_CONSTANTS_H
+#define CUBE_CONSTANTS_H
+
 #include <array>
 #include "ICS_Pair.h"
 
@@ -72,3 +75,5 @@ int directionIndexChange(int direction, int arrayWidth);
 int directionToAxis(int direction);
 
 ICS_Pair<int> calculateNewPositionOnCube(int width, int move, int index);
+
+#endif // !CUBE_CONSTANTS_H
