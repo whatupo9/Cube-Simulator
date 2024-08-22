@@ -48,10 +48,10 @@ public:
 	double getCoordinate(int axis) const;
 };
 
-void drawPoint(const Point& point);
+void drawPoint(const Point* point);
 
-void rotatePoint(Point& point, const Point& centre, double degrees, int axis);
+void rotatePoint(Point* point, const Point& centre, double degrees, int axis);
 
-void snapPointToGrid(Point& point, double interval = 1.0);
+void snapPointToGrid(Point* point, double interval = 1.0);
 
 #endif // !POINT_H
