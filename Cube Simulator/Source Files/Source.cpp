@@ -45,7 +45,6 @@ static void handleRender3D()
 	glRotatef(rotateYAngle, 0.0f, 1.0f, 0.0f);	// rotate the model around the y-axis
 
 	cube.draw(zoom);
-	//other.draw(zoom);
 }
 
 /**
