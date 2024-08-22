@@ -58,11 +58,6 @@ void RotationManager::update(double elapsed)
 	} while (timeLeft != 0.0 and not _rotations.empty());
 }
 
-bool RotationManager::isRotating() const
-{
-	return !_rotations.empty();
-}
-
 void RotationManager::speedUp(int turnNum)
 {
 	for (int i = 0; i < _rotations.size(); i++)

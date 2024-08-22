@@ -20,8 +20,6 @@ public:
 
 	void update(double elapsed);
 
-	bool isRotating() const;
-
 private:
 
 	void speedUp(int turnNum);
