@@ -1,3 +1,7 @@
+#include <memory>
+#include "Cube Constants.h"
+#include "Point.h"
+#include "Rotation.h"
 #include "RotationManager.h"
 
 RotationManager::RotationManager()
