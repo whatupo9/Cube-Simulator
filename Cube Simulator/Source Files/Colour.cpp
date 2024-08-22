@@ -1,22 +1,13 @@
 #include "Colour.h"
 #include "Cube Constants.h"
-#include "Math.h"
 
 #include <glut.h>
-
-Colour::Colour() :
-	_red(0.0f),
-	_green(0.0f),
-	_blue(0.0f)
-{
-}
 
 Colour::Colour(float red, float green, float blue) :
 	_red(clamp(red, 0.0f, 1.0f)),
 	_green(clamp(green, 0.0f, 1.0f)),
 	_blue(clamp(blue, 0.0f, 1.0f))
-{
-}
+{}
 
 Colour::Colour(int red, int green, int blue)
 {

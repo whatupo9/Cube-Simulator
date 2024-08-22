@@ -70,6 +70,20 @@ const std::array<std::array<int, 4>, 6> FACE_CORNERS =
 	{{ 7, 6, 5, 4 }}
 } };
 
+template <typename T>
+T clamp(T& v, T min, T max)
+{
+	if (v < min)
+	{
+		v = min;
+	}
+	else if (v > max)
+	{
+		v = max;
+	}
+	return v;
+}
+
 int directionIndexChange(int direction, int arrayWidth);
 
 int directionToAxis(int direction);

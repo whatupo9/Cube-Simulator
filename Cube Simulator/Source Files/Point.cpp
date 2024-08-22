@@ -1,8 +1,8 @@
 #include <corecrt_math_defines.h>
-#include <glut.h>
 #include "Cube Constants.h"
 #include "Point.h"
 
+#include <glut.h>
 double& Point::operator[](const int index)
 {
 	if (index == 0)

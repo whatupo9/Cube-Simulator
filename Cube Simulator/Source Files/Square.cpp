@@ -1,5 +1,4 @@
 #include "Square.h"
-
 #include <glut.h>
 
 Square::Square() :

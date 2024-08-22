@@ -1,7 +1,6 @@
 #ifndef POINT_H
 #define POINT_H
 
-#include "Math.h"
 #include "Cube Constants.h"
 
 class Point

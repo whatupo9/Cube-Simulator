@@ -3,13 +3,13 @@
 
 class Colour
 {
-	float _red;
-	float _green;
-	float _blue;
+	float _red = 0.0f;
+	float _green = 0.0f;
+	float _blue = 0.0f;
 
 public:
 
-	Colour();
+	Colour() = default;
 
 	Colour(float red, float green, float blue);
 

@@ -1,9 +1,8 @@
 #include <iostream>		// for string, cin, cout and endl
+#include <glut.h>		// the library for glut (OpenGL)
 
 #include "ICS_Game.h"	// for the simple game framework
 #include "Rubiks.h"		// for cube class
-
-#include <glut.h>		// the library for glut (OpenGL)
 
 //Getting cube to turn
 //Add delay to rotation for queueing moves

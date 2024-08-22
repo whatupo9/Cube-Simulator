@@ -1,4 +1,3 @@
-#include <ICS_Helpers.h>
 #include <memory>
 #include "Cube Constants.h"
 #include "Point.h"
@@ -36,7 +35,7 @@ void RotationManager::update(double elapsed)
 	{
 		double otherTimeLeft = _rotations[0]->getRemainingDuration();
 		timeLeft = elapsed - otherTimeLeft;
-		ICS_clamp(timeLeft, 0.0, elapsed);
+		clamp(timeLeft, 0.0, elapsed);
 
 		for (int i = 0; i < _rotations.size(); i++)
 		{
