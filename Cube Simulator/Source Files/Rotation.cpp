@@ -26,8 +26,7 @@ bool Rotation::rotate(double elapsed)
 
 	double realDegrees = _clockwise ? -degrees : degrees;
 
-	//TODO change rotations to use new function
-	_point->rotate(_centre, realDegrees, _axis);
+	rotatePoint(_point, _centre, realDegrees, _axis);
 
 	_degreesRotated += degrees;
 
