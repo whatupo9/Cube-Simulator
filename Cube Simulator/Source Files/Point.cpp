@@ -136,59 +136,11 @@ void drawPoint(const Point* point)
 	glVertex3d(point->getX(), point->getY(), point->getZ());
 }
 
-void rotatePoint(Point* point, const Point& centre, double degrees, int axis)
+void rotatePoint(Point& point, const Point& centre, double degrees, int axis)
 {
-	double x = point->getX();
-	double y = point->getY();
-	double z = point->getZ();
-
-	double cx = centre.getX();
-	double cy = centre.getY();
-	double cz = centre.getZ();
-
 	double theta = degreesToRadians(degrees);
-
-	// Translation to center point
-	x -= cx;
-	y -= cy;
-	z -= cz;
-
-	double cosTheta = cos(theta);
-	double sinTheta = sin(theta);
-
-	double newX;
-	double newY;
-	double newZ;
-
-	switch (axis)
-	{
-	case 0:
-		newX = x;
-		newY = cosTheta * y - sinTheta * z;
-		newZ = sinTheta * y + cosTheta * z;
-		break;
-	case 1:
-		newX = cosTheta * x + sinTheta * z;
-		newY = y;
-		newZ = -sinTheta * x + cosTheta * z;
-		break;
-	case 2:
-		newX = cosTheta * x - sinTheta * y;
-		newY = sinTheta * x + cosTheta * y;
-		newZ = z;
-		break;
-	default:
-		return;
-	}
-
-	// Translation back from center point
-	x = newX + cx;
-	y = newY + cy;
-	z = newZ + cz;
-
-	point->setX(x);
-	point->setY(y);
-	point->setZ(z);
+	point.setX(centre.getX() + (point.getX() - centre.getX()) * std::cos(theta) - (point.getY() - centre.getY()) * std::sin(theta));
+	point.setY(centre.getY() + (point.getX() - centre.getX()) * std::sin(theta) + (point.getY() - centre.getY()) * std::cos(theta));
 }
 
 void snapPointToGrid(Point& point, double interval)
