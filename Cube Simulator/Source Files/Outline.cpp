@@ -33,11 +33,13 @@ void Outline::draw(double zoom) const
 
 	for (int i = 0; i < _pointsNum - 1; i++)
 	{
-		_points[i]->draw();
-		_points[i + 1]->draw();
+		drawPoint(_points[i]);
+		drawPoint(_points[i + 1]);
 	}
-	_points[0]->draw();
-	_points[_pointsNum - 1]->draw();
+
+	drawPoint(_points[0]);
+	drawPoint(_points[_pointsNum - 1]);
+
 	glEnd();
 }
 

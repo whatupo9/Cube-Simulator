@@ -143,7 +143,7 @@ void Square::draw(double zoom)
 
 	for (int i = 0; i < 4; i++)
 	{
-		_corners[i]->draw();
+		drawPoint(_corners[i]);
 	}
 
 	glEnd();
